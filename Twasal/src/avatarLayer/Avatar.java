@@ -1,4 +1,4 @@
-package AvatarLayer;
+package avatarLayer;
 
 import animationBuilderLayer.Code;
 
