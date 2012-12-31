@@ -1,47 +1,43 @@
 package databaseLayer;
 
-public interface Database {
 
-	/**
-	 * check if word exist in the database
-	 * Return true if found, false if not found
-	 * @param word
-	 * @return
-	 */
-	public boolean checkWord (String word);
+public class Database implements Database_Interface {
+
+	private DbConnection con;
 	
-	/**
-	 * get translation of word
-	 * Return string contain the translation if exist 
-	 * Return NULL if the word not exist
-	 * @param word
-	 * @return
-	 */
-	public String getTranslation (String word);
+	public Database() {
+		DatabaseAttributes att = new DatabaseAttributes("com.mysql.jdbc.Driver", "jdbc:mysql://localhost:3306/", "twasal", "twasal", "admin");
+		con = new DbConnection (att);
+	}
 	
-	/**
-	 * insert word with it's translation into the database
-	 * get object with the parameters
-	 * Return true if successful insertion
-	 * @param prams
-	 * @return
-	 */
-	public boolean insert (Parameters prams);
-	
-	/**
-	 * delete word from the database
-	 * Return true if successful deletion, false if not 
-	 * @param word
-	 * @return
-	 */
-	public boolean delete (String word);
-	
-	/**
-	 * update parameters of word
-	 * Return true if successful, false if not
-	 * @param prams
-	 * @return
-	 */
-	public boolean update (Parameters prams);
-	
+	@Override
+	public boolean checkWord(String word) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String getTranslation(String word) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean insert(Parameters prams) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(String word) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(Parameters prams) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
